@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack'
 import TelaInicial from "./src/telas/TelaInicial";
 import TelaResultado from "./src/telas/TelaResultado";
 import TelaDetalhes from "./src/telas/TelaDetalhes";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Stack = createStackNavigator()
 
@@ -18,7 +19,12 @@ const App = () =>{
           component={TelaInicial}
           options={{headerShown:false}}
         />
-        <Stack.Screen name='TelaResultado' component={TelaResultado}/>
+
+        <Stack.Screen name='TelaResultado' 
+        component={TelaResultado} 
+        options={{headerShown:false}}
+        />
+
         <Stack.Screen name='TelaDetalhes' component={TelaDetalhes}/>
       </Stack.Navigator>
     </NavigationContainer>
